@@ -3,8 +3,7 @@ package arrays;
 import java.util.Random;
 
 public class _00_ArrayCheatSheet {
-	static int smallest;
-	static int largest;
+	
 	public static void main(String[] args) {
 	//1. make an array of 5 Strings
 		
@@ -30,20 +29,15 @@ public class _00_ArrayCheatSheet {
 		for(int i=0;i<integers.length;i++) {
 			integers[i] = new Random().nextInt(50);
 		}
+		
+		int smallest = integers[0];
+		int largest = integers[0];
 	//8. without printing the entire array, print only the smallest number in the array
 		for(int i=0;i<integers.length;i++) {
-			int temp = integers[i];
-			if(i<=48) {
-				if(integers[i]<integers[i+1]) {
-					if(temp<integers[i+1]) {
-					 temp = integers[i];
-					}
-				}else {
-					temp = integers[i+1];
-				}
-				smallest = temp;
+			if(integers[i]<smallest) {
+				smallest = integers[i];
 			}
-		
+	
 		}
 		System.out.println(smallest);
 	//9 print the entire array to see if step 8 was correct
@@ -52,13 +46,13 @@ public class _00_ArrayCheatSheet {
 		}
 	//10. print the largest number in the array.
 		for(int i=0;i<integers.length;i++) {
-			if(i<49) {
-				if(integers[i]>integers[i+1]) {
-					 largest = integers[i];
-				}
+			if(integers[i]>largest) {
+				largest = integers[i];
 			}
 		}
+		
 		System.out.println("");
 		System.out.println(largest);
+		
 	}
 }
